@@ -1,4 +1,4 @@
-1- Imagem principal do site so mostra o logo do shop com cores diferentes
+1- Imagem principal do site so mostra o logo do shop com cores diferentes <br>
 2- Produtos não batem, mostra a imagem de um playstation com o nome de uma roupa, e quando se passa o mouse em cima mostra um relogio.
 3- tanto a parte sor by: Price low to high, high to low, popularity e newness não mostram somente os produtos marcados, e mostram produtos aleatorios de outras categoria.
 4- A parte também de selecionar se o produto é popular, best seller , trending e featured não retorna somente os produtos designados, retornando outros também.

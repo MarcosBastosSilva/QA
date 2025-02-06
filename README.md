@@ -1,29 +1,56 @@
-1- Imagem principal do site so mostra o logo do shop com cores diferentes. <br>
-2- Produtos não batem, mostra a imagem de um playstation com o nome de uma roupa, e quando se passa o mouse em cima mostra um relogio. <br>
-3- tanto a parte sor by: Price low to high, high to low, popularity e newness não mostram somente os produtos marcados, e mostram produtos aleatorios de outras categoria. <br>
-4- A parte também de selecionar se o produto é popular, best seller , trending e featured não retorna somente os produtos designados, retornando outros também. <br>
-5- Se clicar para trocar o layout de quantidades de produtos que aparece em bloco ou descritivo e clicar novamente, podemos perceber que as tags de ''45%off" "trending", "hot" etc mudam de cor. <br>
-6- Produtos voltam para o seu carrinho e seu favoritos mesmo que sejam removidos. <br>
-7- o valor dos produtos no carrinho é diferente do valor final no pagamento, exemplo: os 3 produtos que automaticamente são presentes no site no total de $107 na partte de cashout o valor é de 349, com mais de um produto no final. <br>
-8- os produtos principais, na tela inicial como o notebook, e as duas promoções de notebooks, quando clicados nao retornam o produto e sim vão para a pagina de diversos produtos. <br>
-9- Não importa o que seja digitado na barra de busca, irá te levar para a pagina de ''shop''. <br>
-10 - Na parte do footer, tanto o ''checkout view one'' como o ''two'' retornam produtos que não estão na sua sacola de compras, e produtos diferentes em ambas opções. <br>
-11- Ainda no footer, os icones das redes sociais não retorna nenhum link. <br>
-12- na parte de ''NEWSLETTER' para enviar um e-mail ao site, é aceito o email ''aaa@aaa" não respeitando as especificações da RFC 5322. <br>
-13- a Partede Order Tracking ocorre o mesmo problema, contando que tenha 1 caractere digitado ele te mostrara que a ordem foi completa e retornara um resultado em 3h - 6h. <br>
-14- Na parte de "cart view one" e "two" mostram os mesmos produtos que foram colocados no carrinho. <br>
-15- Na aba ''SHOP'' no header quando clicado em order complete, sera direcionado a mesma tela que o concluido e tera um retorno entre 3 a 6h mesmo que não tenha colocado nenhuma informação no site(teste limpando cookies e aba anonima). <br>
-16- a parte de nos siga no instagram também não redireciona a nenhum site, mesmo clicando em diversos produtos. <br>
-17 - Na parte de Pages e em endereço existem endereços salvos mesmo que seja sua primeira vez visitando o site. <br> 
-18- Na parte de account details e possivel visualizar informações de outro usuario e edita-las. <br>
-19 - É possivel verificar até detalhes de terceiros mesmo não estando logado no usuario do mesmo, na parte de profile. <br>
-20 - É possivel ver orderns de produtos mesmo não estando em nenhuma conta. <br>
-21- Na dashboard é possivel verificar informações que não são suas. <br>
-22- o login aceita qualquer e-mail e senha que não foram cadastrados para se conectar a uma conta. <br>
-23- mesmo com uma conta criada e indo na parte de deletar ou desativar a conta, não é possivel concluir nenhuma das operações. <br>
-24- Ao criar a sua conta é adicionado uma lista de produtos automaticamente no seu carrinho. <br>
-25- o botão de "lembrar de mim'' não funciona corretamente. <br>
-26- Ao cadastrar uma conta é possivel colocar no campo ''nome'' qualquer caractere que será aceito para o cadastramento da conta. <br>
-27 - Na parte de pagamentos é possivel deixar numeros no campo de first nami e last name, e também no campo de nome da sua companhia. <br>
-28 - Não é possivel editar as informações apos clicar no botão de save abaixo. <br>
-29 - após selecionar a forma da pagamento ele ja conclui a transação. <br>
+1)Cenário: Exibição correta da imagem do produto <br>
+Dado que o usuário esteja na página de produtos <br>
+Quando o usuário visualizar um produto específico <br> 
+Então a imagem do produto deve corresponder à descrição do produto e à sua categoria <br>
+
+2)Cenário: Filtros de produtos funcionando corretamente <br>
+Dado que o usuário esteja na página de filtragem de produtos <br>
+E o usuário selecione um filtro como "Price low to high" <br>
+Quando o usuário aplicar o filtro <br>
+Então os produtos exibidos devem corresponder à faixa de preço do filtro selecionado <br>
+
+3)Cenário: Correção da exibição do produto ao clicar nas promoções <br>
+Dado que o usuário esteja na página inicial <br>
+Quando o usuário clicar em um produto de promoção (por exemplo, notebook) <br>
+Então a página deve exibir o produto correto relacionado à promoção <br>
+Cenário: Funcionalidade de login com credenciais válidas <br>
+
+4)Dado que o usuário tenha uma conta cadastrada no site <br>
+E o usuário insira um e-mail e senha válidos na página de login <br>
+Quando o usuário clicar no botão "Entrar" <br>
+Então o usuário deve ser redirecionado para sua conta <br>
+
+5)Cenário: Erro ao tentar login com credenciais inválidas <br>
+Dado que o usuário não tenha uma conta cadastrada no site <br>
+E o usuário insira um e-mail e senha inválidos na página de login <br>
+Quando o usuário clicar no botão "Entrar" <br>
+Então o sistema deve exibir uma mensagem de erro dizendo "Credenciais inválidas" <br>
+
+6)Cenário: Não permitir produtos inválidos no carrinho <br>
+Dado que o usuário tenha adicionado um produto ao carrinho <br>
+Quando o usuário tentar remover o produto do carrinho <br>
+Então o produto deve ser removido e não deve aparecer mais no carrinho <br>
+
+7)Cenário: Preço correto no checkout <br>
+Dado que o usuário tenha adicionado três produtos ao carrinho <br>
+Quando o usuário for para a página de checkout <br>
+Então o preço total no checkout deve corresponder à soma dos preços dos produtos no carrinho <br>
+
+8)Cenário: Formulário de inscrição na newsletter validando e-mail corretamente <br>
+Dado que o usuário esteja na seção de inscrição para a newsletter <br>
+E o usuário insira um e-mail válido no campo de inscrição <br>
+Quando o usuário clicar no botão de "Inscrever" <br>
+Então o sistema deve enviar uma confirmação de inscrição para o e-mail fornecido <br>
+
+9)Cenário: Erro ao tentar inserir um nome inválido no cadastro <br>
+Dado que o usuário esteja na página de cadastro <br>
+E o usuário insira caracteres inválidos no campo "Nome" <br>
+Quando o usuário tentar submeter o formulário <br>
+Então o sistema deve exibir uma mensagem de erro dizendo "Nome inválido" <br>
+
+10)Cenário: Falha ao tentar excluir uma conta <br>
+Dado que o usuário tenha uma conta registrada no site <br>
+Quando o usuário tentar excluir sua conta a partir da seção "Configurações" <br>
+Então o sistema deve exibir uma mensagem de erro e não permitir que a conta seja excluída <br>
+
+

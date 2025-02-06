@@ -13,9 +13,9 @@ Então os produtos exibidos devem corresponder à faixa de preço do filtro sele
 Dado que o usuário esteja na página inicial <br>
 Quando o usuário clicar em um produto de promoção (por exemplo, notebook) <br>
 Então a página deve exibir o produto correto relacionado à promoção <br>
-Cenário: Funcionalidade de login com credenciais válidas <br>
 
-4)Dado que o usuário tenha uma conta cadastrada no site <br>
+4)Cenário: Funcionalidade de login com credenciais válidas<br>
+Dado que o usuário tenha uma conta cadastrada no site <br>
 E o usuário insira um e-mail e senha válidos na página de login <br>
 Quando o usuário clicar no botão "Entrar" <br>
 Então o usuário deve ser redirecionado para sua conta <br>
